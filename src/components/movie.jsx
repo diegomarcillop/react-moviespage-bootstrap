@@ -1,10 +1,11 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { Row, Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function Movie({ title, image, range, overview }) {
+function Movie({ id, title, image, range, overview }) {
   const path = "https://image.tmdb.org/t/p/w500";
+  const route = `/infoMovie/${id}`
 
   return (
     <Row style={{ padding: "10%" }}>
@@ -17,9 +18,9 @@ function Movie({ title, image, range, overview }) {
           fontFamily: "Raleway, sans-serif"
         }}
       >
-        <Link to="/infomovie">
+        
           <Card.Img variant="top" src={path.concat(image)} />
-        </Link>
+        
         <Card.Body
           style={{
             position: "absolute",
@@ -31,7 +32,7 @@ function Movie({ title, image, range, overview }) {
             zIndex: "0"
           }}
         >
-          <Link to="/infomovie">
+          <Link className="link-movie" to={route}  >
             <Card.Title>
               <h6>{title}</h6>
             </Card.Title>

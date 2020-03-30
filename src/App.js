@@ -1,13 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom"; 
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Container } from "react-bootstrap";
 import "./App.css";
- import NavBar from "./components/navBar"; 
- import Home from "./components/home";
-import InfoMovie from "./components/infoMovie";
+import NavBar from "./components/navBar";
+import Home from "./components/home";
 import MovieContainer from "./containers/movie-container";
-
+import GenreContainer from "./containers/genre-container";
+import InfoMovieContainer from "./containers/infoMovie-container";
 function App() {
   return (
     <Router>
@@ -21,21 +21,24 @@ function App() {
           }}
         >
           <Col>
-           <Container style={{ padding: '20px'}}
-           fluid="md"
-           >
-           <MovieContainer />
-           </Container>
+            <Container style={{ padding: "20px" }} fluid="md">
+              <GenreContainer />
+              <MovieContainer category="popular" />
+            </Container>
           </Col>
         </Container>
       </Route>
 
-      <Route path="/infomovie" exact>
-        <InfoMovie />
+      <Route path="/infoMovie/:idMovie" exact>
+        <InfoMovieContainer />
       </Route>
 
       <Route path="/popular" exact>
-          <MovieContainer/>
+        <MovieContainer category="popular" />
+      </Route>
+
+      <Route path="/premieres" exact>
+        <MovieContainer category="premieres" />
       </Route>
     </Router>
   );

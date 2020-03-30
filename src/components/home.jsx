@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
-import Seacher from './searcher';
-
+import { Row } from 'react-bootstrap';
+import CarouselC from './carousel';
+ 
 function Home(props){
     return(
         <Row  style={{
@@ -14,7 +14,7 @@ function Home(props){
             position: 'relative'
         }}>
             
-        
+        <CarouselC/>
         </Row>
     )
 }

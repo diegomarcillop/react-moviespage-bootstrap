@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Navbar, Nav } from "react-bootstrap";
 import Seacher from "./searcher";
 import { Link } from "react-router-dom";
@@ -23,7 +22,7 @@ function navBar(props) {
       fixed="top"
       variant="dark"
     >
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         <img
           src="/logo.svg"
           width="30"
@@ -42,11 +41,9 @@ function navBar(props) {
           <Link className="navlink" to="/peliculas">
             Peliculas
           </Link>
-          <Link className="navlink" to="/series">
-            Series
-          </Link>
-          <Link className="navlink" to="/documentales">
-            Documentales
+         
+          <Link className="navlink" to="/premieres">
+            Estrenos
           </Link>
 
           <Link className="navlink" to="/popular">

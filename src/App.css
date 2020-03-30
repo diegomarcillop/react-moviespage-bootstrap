@@ -7,20 +7,20 @@ body , html {
   
  h6{
     font-family: 'Fredoka One', cursive;
-    font-size: 40em;
 
  }
 
  
-a{
+ .link-movie{
     color: white!important;
     text-decoration: none!important;
 }
 
- p{
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px;
+ p, option{ 
+   font-family: 'Raleway', sans-serif;
+    font-size: 0.9em;
  }
+
 
  .fa-star{
      color:rgba(255, 189, 9, 0.747)
@@ -29,15 +29,18 @@ a{
  .navlink{
      text-decoration: none!important;
      color:white!important;
-     padding: 4px;
+     padding: 5px;
  }
  
  .card-body:hover{
     opacity: 1!important;
  }  
 
+ .card-movie p{
+    font-size: 16px!important;
+ }
  .navlink:hover{
-    color: #5ee4b7!important;
+    color: #79dbce!important;
  }
 
  .overview{ 
@@ -52,4 +55,9 @@ a{
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+ }
+
+ .dropdown-item{
+   font-family: 'Raleway', sans-serif;
+   font-size: 15px;
  }

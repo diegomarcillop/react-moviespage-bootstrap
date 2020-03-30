@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Movie from "./movie";
 
 let style = {
@@ -16,15 +16,15 @@ function Movies({ title, movies, icon }) {
       <h4>
         <i className={icon}></i> {title}
       </h4>
-      <Row  md="auto" style={{
+      <Row  style={{
         paddingLeft: '13%'
       }} >
         {movies.map((movie, index) => {
-          console.log(movie);
-           return (
+            return (
+             
             <div key={index}>
-              <Col>
-                <Movie title={movie.original_title} image={movie.poster_path} range={movie.vote_average} overview={movie.overview}/>
+              <Col xs lg={12}>
+                <Movie id={movie.id}title={movie.title} image={movie.poster_path} range={movie.vote_average} overview={movie.overview}/>
               </Col>
             </div>
           );

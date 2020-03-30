@@ -3,31 +3,45 @@ import Movies from "../components/movies";
 import axios from "axios";
 import { Row } from "react-bootstrap";
 
-function MovieContainer({ title }) {
+function MovieContainer({ title, category }) {
+  const apiKey = process.env.REACT_APP_API_KEY;
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
-    dataApi();
-  }, []);
 
-  const dataApi = async () => {
-    const api_key = "85f5a5d0c6e1af23a2e140e4d6fbfc26";
-    await axios
-      .get(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&page=2`
-      )
-      .then(({ data }) => {
-        const result = data.results;
-        setMovies({ res: result });
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  };
+    async function dataApi() {
+      let url;
+
+      switch (category) {
+        case "popular":
+          url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=2`;
+          break;
+        case "premieres":
+          url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`
+        default:
+          break;
+      } 
+
+      await axios
+        .get(url)
+        .then(({ data }) => {
+          const result = data.results;
+          setMovies({ res: result });
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }
+
+
+    dataApi();
+  }, [apiKey]);
+
+ 
 
   const options = () => {
     if (movies != null) {
-      return  <Movies title={title} movies={movies.res} />
+      return <Movies title={title}  movies={movies.res} />;
     }
   };
 
