@@ -8,22 +8,21 @@ function InfoMovieContainer(props) {
   const [movie, setMovie] = useState({ movie: {}, video:{} });
   let { idMovie } = useParams();
 
-  useEffect(() => { 
-      
+  useEffect(() => {    
+    async function apiData() {
+      await Axios.get(
+        `https://api.themoviedb.org/3/movie/${idMovie}?api_key=${apiKey}&language=en-US`
+      )
+        .then(({ data }) => { 
+           setMovie({
+            movie: data
+          });
+        })
+        .catch(err => console.log(err))
+    } 
+    
      apiData(); 
-   }, [apiKey, setMovie]);
-
-  async function apiData() {
-    await Axios.get(
-      `https://api.themoviedb.org/3/movie/${idMovie}?api_key=${apiKey}&language=en-US`
-    )
-      .then(({ data }) => { 
-         setMovie({
-          movie: data
-        });
-      })
-      .catch(err => console.log(err))
-  } 
+   }, [apiKey, setMovie, idMovie]);
 
    
   

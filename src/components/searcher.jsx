@@ -10,8 +10,7 @@ function Seacher(props) {
           justifyContent: "center",
           fontFamily: "Raleway, sans-serif",
           marginTop: "50px",
-          marginBottom: "50px",
-          paddingRight: "10px"
+          marginBottom: "50px" 
         }}
       >
         <FormControl

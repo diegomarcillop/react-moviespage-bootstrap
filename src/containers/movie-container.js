@@ -18,6 +18,7 @@ function MovieContainer({ title, category }) {
           break;
         case "premieres":
           url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`
+          break;
         default:
           break;
       } 
@@ -31,11 +32,9 @@ function MovieContainer({ title, category }) {
         .catch(err => {
           console.error(err);
         });
-    }
-
-
+    } 
     dataApi();
-  }, [apiKey]);
+  }, [apiKey, category]);
 
  
 

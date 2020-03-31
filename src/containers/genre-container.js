@@ -8,23 +8,24 @@ function GenreContainer() {
   const [genres, setGenres] = useState(null);
 
   useEffect(() => {
-    console.log('REPITE')
-    apiData();
+    async function apiData() {
+      await Axios.get(
+        `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
+      )
+        .then(async ({ data }) => {
+         await setGenres({
+            res: data.genres
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+    
+     apiData();
   },[apiKey]);
 
-  async function apiData() {
-    await Axios.get(
-      `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`
-    )
-      .then(async ({ data }) => {
-       await setGenres({
-          res: data.genres
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
+ 
 
   function options() {
     if (genres !== null) {

@@ -1,7 +1,6 @@
 import React from "react";
-import { Nav, NavDropdown, Container, Form, Row, Col } from "react-bootstrap";
-const years = [2020, 2019, 2018, 2017];
-
+import { Nav, Container, Form, Row, Col } from "react-bootstrap";
+ 
 function Genres({ genres }) {
   function OnChange(evt) {
     console.log(evt.target.value);
@@ -41,8 +40,7 @@ function Genres({ genres }) {
               >
                 <option></option>
                 {genres.map(genre => {
-                  console.log(genre);
-                  return <option key={genre.id}>{genre.name}</option>;
+                   return <option key={genre.id}>{genre.name}</option>;
                 })}
               </Form.Control>
             </Col>

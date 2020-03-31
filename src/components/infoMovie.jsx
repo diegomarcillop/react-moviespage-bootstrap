@@ -1,27 +1,25 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col, Card, Button, Image } from "react-bootstrap";
+import { Container, Row, Col, Card, Image } from "react-bootstrap";
 
 function InfoMovie({ movie }) {
   var path = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
   var backdrop_path = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
- 
-  useEffect(() => { 
-    genres();
-  }); 
 
-  function genres() {
+  useEffect(() => {
     if (movie.genres !== undefined) {
-      movie.genres.map(genre => {
+        movie.genres.map(genre => {
         document.getElementById("genres").innerHTML =
           genre.name + " |  " + document.getElementById("genres").innerHTML;
       });
     }
-  }
+  });
 
+ 
   return (
     <Container>
       <br />
-      <Card className="card-movie"
+      <Card
+        className="card-movie"
         style={{
           boxShadow:
             "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
@@ -83,7 +81,6 @@ function InfoMovie({ movie }) {
                   </p>
                 </Col>
               </Row>
- 
             </Card.Body>
           </Col>
         </Row>

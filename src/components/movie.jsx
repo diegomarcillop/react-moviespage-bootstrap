@@ -12,7 +12,7 @@ function Movie({ id, title, image, range, overview }) {
       <Card
         style={{
           textAlign: "left",
-          width: "14rem",
+          width: "14rem", 
           boxShadow:
             "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
           fontFamily: "Raleway, sans-serif"

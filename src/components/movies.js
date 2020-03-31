@@ -12,18 +12,18 @@ let style = {
 function Movies({ title, movies, icon }) {
 
   return (
-    <Container  style={style}>
+    <Container fluid style={style}>
       <h4>
         <i className={icon}></i> {title}
       </h4>
-      <Row  style={{
+      <Row  xs={3} md={3} lg={5} style={{
         paddingLeft: '13%'
       }} >
         {movies.map((movie, index) => {
             return (
              
             <div key={index}>
-              <Col xs lg={12}>
+              <Col>
                 <Movie id={movie.id}title={movie.title} image={movie.poster_path} range={movie.vote_average} overview={movie.overview}/>
               </Col>
             </div>

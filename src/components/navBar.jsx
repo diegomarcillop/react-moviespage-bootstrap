@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import Seacher from "./searcher";
-import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
 
 const styles = {
   navBar: {
@@ -13,12 +12,12 @@ const styles = {
   }
 };
 
-function navBar(props) {
+function NavBar(props) { 
+
   return (
-    <Navbar
+    <Navbar  
       style={styles.navBar}
-      collapseOnSelect
-      expand="lg"
+      collapseOnSelect 
       fixed="top"
       variant="dark"
     >
@@ -32,27 +31,23 @@ function navBar(props) {
         />{" "}
         MAXPELIS
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
+      <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+      <Navbar.Collapse  id="responsive-navbar-nav" className="mx-auto">
+        <Nav className="ml-auto">
           <Link className="navlink" to="/">
-            Inicio
-          </Link>
-          <Link className="navlink" to="/peliculas">
-            Peliculas
-          </Link>
+            Home
+          </Link> 
          
           <Link className="navlink" to="/premieres">
-            Estrenos
+          Premier
           </Link>
 
           <Link className="navlink" to="/popular">
-            Popular
-          </Link>
-        </Nav>
-        <Seacher />
+          Populaire
+          </Link> 
+        </Nav>  
       </Navbar.Collapse>
     </Navbar>
   );
 }
-export default navBar;
+export default NavBar;

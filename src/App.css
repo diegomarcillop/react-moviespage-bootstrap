@@ -40,7 +40,7 @@ body , html {
     font-size: 16px!important;
  }
  .navlink:hover{
-    color: #79dbce!important;
+    color: rgba(29, 44, 42, 0.219)!important;
  }
 
  .overview{ 

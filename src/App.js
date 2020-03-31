@@ -6,39 +6,45 @@ import "./App.css";
 import NavBar from "./components/navBar";
 import Home from "./components/home";
 import MovieContainer from "./containers/movie-container";
-import GenreContainer from "./containers/genre-container";
 import InfoMovieContainer from "./containers/infoMovie-container";
+
 function App() {
   return (
     <Router>
       <NavBar />
       <Route path="/" exact>
         <Home />
+          
         <Container
           fluid
           style={{
-            backgroundColor: "#152026"
+            backgroundColor: "#152026",
+            borderTop: '5px solid   #79dbce'
           }}
         >
           <Col>
             <Container style={{ padding: "20px" }} fluid="md">
-              <GenreContainer />
-              <MovieContainer category="popular" />
+               <MovieContainer category="popular" />
             </Container>
           </Col>
         </Container>
+         
       </Route>
 
-      <Route path="/infoMovie/:idMovie" exact>
+      <Route path="/infoMovie/:idMovie" exact> 
         <InfoMovieContainer />
       </Route>
 
       <Route path="/popular" exact>
+      <Container style={{ padding: "20px" }} fluid="md">
         <MovieContainer category="popular" />
+        </Container>
       </Route>
 
       <Route path="/premieres" exact>
+      <Container style={{ padding: "20px" }} fluid="md">
         <MovieContainer category="premieres" />
+        </Container>
       </Route>
     </Router>
   );
