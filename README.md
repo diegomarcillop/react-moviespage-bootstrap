@@ -1,7 +1,7 @@
 
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/diegomarcillop/react-moviespage-bootstrap/master/public/logo.png?token=AGMS6L6TVNZIZNU4K3FPCMS6QKZ64" width="80px"/>
+ <img src="https://raw.githubusercontent.com/diegomarcillop/react-moviespage-bootstrap/master/public/logo.png?token=AGMS6L2VYEIAHBUPMTSTROC6QK44G" width="80px"/>
 </p>
 
 ## Description
@@ -22,9 +22,9 @@ $ npm  start
 
  
  <p align="center">
-<img src="https://raw.githubusercontent.com/diegomarcillop/react-moviespage-bootstrap/master/public/view1.png?token=AGMS6L3R3FCCI7APZLS7XE26QKXVI"></img>
+<img src="https://raw.githubusercontent.com/diegomarcillop/react-moviespage-bootstrap/master/public/view1.png?token=AGMS6LYJ54FEEFDPQOFDAOS6QK4TG"></img>
 
- <img src="https://raw.githubusercontent.com/diegomarcillop/react-moviespage-bootstrap/master/public/view3.png?token=AGMS6L62TTA2JZ3SPPV7KDS6QK3TK" witdh="90%"/>
+ <img src="https://raw.githubusercontent.com/diegomarcillop/react-moviespage-bootstrap/master/public/view3.png?token=AGMS6L7WQJ6PPNHWPVKGCBC6QK4XW" witdh="90%"/>
 
 </p>
 
